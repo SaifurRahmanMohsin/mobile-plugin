@@ -1,0 +1,12 @@
+# ===================================
+#  Relation Behavior Config
+# ===================================
+
+variants:
+    label: Variant
+    manage:
+        form: $/tempestronics/mobile/models/variant/fields.yaml
+        list: $/tempestronics/mobile/models/variant/columns.yaml
+    view:
+        list: $/tempestronics/mobile/models/variant/columns.yaml
+        toolbarButtons: create|delete

@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: App
+
+# Model Form Field configuration
+form: $/tempestronics/mobile/models/app/fields.yaml
+
+# Model Class name
+modelClass: Tempestronics\Mobile\Models\App
+
+# Default redirect location
+defaultRedirect: tempestronics/mobile/apps
+
+# Create page
+create:
+    title: Create App
+    redirect: tempestronics/mobile/apps/update/:id
+    redirectClose: tempestronics/mobile/apps
+
+# Update page
+update:
+    title: Edit App
+    redirect: tempestronics/mobile/apps
+    redirectClose: tempestronics/mobile/apps
+
+# Preview page
+preview:
+    title: Preview App

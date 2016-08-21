@@ -1,0 +1,15 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: tempestronics.mobile::lang.install.label
+
+# Model Form Field configuration
+form: $/tempestronics/mobile/models/install/fields.yaml
+
+# Model Class name
+modelClass: Tempestronics\Mobile\Models\Install
+
+# Default redirect location
+defaultRedirect: tempestronics/mobile/installs

@@ -1,0 +1,32 @@
+<div class="control-toolbar">
+  <?php if (count($variants) == 0): ?>
+    <div class="toolbar-item callout fade in callout-danger">
+      <div class="form-control content" style="padding: 10px 20px 10px;">
+          <p>You must create at least one app with one variant to see values in this section.</p>
+      </div>
+    </div>
+  <?php else: ?>
+    <div class="toolbar-item toolbar-primary">
+        <div data-control="toolbar">
+            <div class="dropdown dropdown-fixed">
+                <button
+                    id="parentDropdown"
+                    type="button"
+                    class="btn btn-default oc-icon-mobile"
+                    data-toggle="dropdown">
+                    <?php echo $variants[$variant_id] ?> <?php if (count($variants) > 1): ?><span class="caret"><?php endif ?>
+                </button>
+                <?php if (count($variants) > 1): ?>
+                <ul class="dropdown-menu" role="menu" data-dropdown-title="Select variant">
+                  <?php foreach ($variants as $k => $variant): ?>
+                    <?php if ($k != $variant_id): ?>
+                      <li role="presentation"><a data-request="onVariantChange" data-request-data="value: '<?= $k ?>'" data-request-before-update="$('#parentDropdown').dropdown('toggle'); $.oc.stripeLoadIndicator.show();" data-request-complete="$.oc.stripeLoadIndicator.hide();location.reload();" role="menuitem" tabindex="-1" href="#" class="oc-icon-android"><?= $variant ?></a></li>
+                    <?php endif ?>
+                  <?php endforeach ?>
+                </ul>
+                <?php endif ?>
+            </div>
+        </div>
+    </div>
+  <?php endif ?>
+</div>

@@ -1,0 +1,18 @@
+# ===================================
+#  List Column Definitions
+# ===================================
+
+columns:
+    package:
+        label: Package
+        searchable: true
+
+    platform:
+        label: Platform
+        searchable: true
+        relation: platform
+        select: name
+
+    description:
+        label: Description
+        searchable: true
