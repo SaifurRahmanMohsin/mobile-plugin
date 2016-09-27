@@ -1,4 +1,4 @@
-<?php namespace Tempestronics\Mobile\Classes;
+<?php namespace Mohsin\Mobile\Classes;
 
 use ApplicationException;
 use System\Classes\ModelBehavior;
@@ -10,7 +10,7 @@ use System\Classes\ModelBehavior;
  *
  * In the model class definition:
  *
- *   public $implement = ['Tempestronics.Mobile.Behaviors.VariantModel'];
+ *   public $implement = ['Mohsin.Mobile.Behaviors.VariantModel'];
  *
  */
 class VariantModel extends ModelBehavior

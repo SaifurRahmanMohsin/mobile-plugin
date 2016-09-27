@@ -1,4 +1,4 @@
-<?php namespace Tempestronics\Mobile\Models;
+<?php namespace Mohsin\Mobile\Models;
 
 use Model;
 
@@ -10,8 +10,8 @@ class Install extends Model
     use \October\Rain\Database\Traits\Validation;
 
     public $rules = [
-        'instance_id'   => 'required|max:16|unique_with:tempestronics_mobile_installs,variant_id',
-        'variant_id'    => 'required|integer|exists:tempestronics_mobile_variants,id'
+        'instance_id'   => 'required|max:16|unique_with:mohsin_mobile_installs,variant_id',
+        'variant_id'    => 'required|integer|exists:mohsin_mobile_variants,id'
     ];
 
     public $throwOnValidation = false;
@@ -19,9 +19,9 @@ class Install extends Model
     /**
      * @var string The database table used by the model.
      */
-    public $table = 'tempestronics_mobile_installs';
+    public $table = 'mohsin_mobile_installs';
 
-    public $implement = ['Tempestronics.Mobile.Classes.VariantModel'];
+    public $implement = ['Mohsin.Mobile.Classes.VariantModel'];
 
     /**
      * @var array Guarded fields
@@ -46,7 +46,7 @@ class Install extends Model
      * @var array Relations
      */
     public $belongsTo = [
-        'variant' => ['Tempestronics\Mobile\Models\Variant']
+        'variant' => ['Mohsin\Mobile\Models\Variant']
     ];
 
     //

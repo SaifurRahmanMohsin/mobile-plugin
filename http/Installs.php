@@ -1,8 +1,8 @@
-<?php namespace Tempestronics\Mobile\Http;
+<?php namespace Mohsin\Mobile\Http;
 
 use Backend\Classes\Controller;
-use Tempestronics\Mobile\Models\Install;
-use Tempestronics\Mobile\Models\Variant;
+use Mohsin\Mobile\Models\Install;
+use Mohsin\Mobile\Models\Variant;
 
 /**
  * Installs Back-end Controller
@@ -21,7 +21,7 @@ class Installs extends Controller
       $package = post('package');
 
       if(($variant = Variant::where('package', '=', $package) -> first()) == null)
-        return response()->json(['response' => e(trans('tempestronics.mobile::lang.install.invalid_package'))], 400);
+        return response()->json('invalid-package', 400);
       $variant_id = $variant -> id;
 
       $install = new Install;

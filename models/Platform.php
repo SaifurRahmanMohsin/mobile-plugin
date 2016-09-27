@@ -1,4 +1,4 @@
-<?php namespace Tempestronics\Mobile\Models;
+<?php namespace Mohsin\Mobile\Models;
 
 use Model;
 
@@ -8,16 +8,21 @@ use Model;
 class Platform extends Model
 {
     use \October\Rain\Database\Traits\Sluggable;
+    use \October\Rain\Database\Traits\Validation;
 
     /**
      * @var string The database table used by the model.
      */
-    public $table = 'tempestronics_mobile_platforms';
+    public $table = 'mohsin_mobile_platforms';
 
     /**
      * @var boolean Turn off timestamps on this model
      */
     public $timestamps = false;
+
+    public $rules = [
+        'name' => 'required|regex:/^[\pL\d\s]+$/u'
+    ];
 
     /**
      * @var array Generate slugs for these attributes.
@@ -29,11 +34,18 @@ class Platform extends Model
      */
     protected $fillable = ['name'];
 
+     /**
+      * @var array Relations
+      */
+     public $hasMany = [
+         'variants' => ['Mohsin\Mobile\Models\Variant', 'delete' => 'true']
+     ];
+
     /**
      * @var array Reserved platform names.
      */
      protected static $reserved = [
-       'android' => 'Tempestronics.Android'
+       // 'android' => 'Mohsin.Android'
      ];
 
     public static function isReserved($str)
@@ -46,12 +58,5 @@ class Platform extends Model
       if(array_key_exists($slug, self::$reserved))
         return self::$reserved[$slug];
    }
-
-    /**
-     * @var array Relations
-     */
-    public $belongsToMany = [
-        'variants' => ['Tempestronics\Mobile\Models\Variant'],
-    ];
 
 }

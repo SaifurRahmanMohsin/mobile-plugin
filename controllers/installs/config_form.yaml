@@ -3,13 +3,13 @@
 # ===================================
 
 # Record name
-name: tempestronics.mobile::lang.install.label
+name: mohsin.mobile::lang.install.label
 
 # Model Form Field configuration
-form: $/tempestronics/mobile/models/install/fields.yaml
+form: $/mohsin/mobile/models/install/fields.yaml
 
 # Model Class name
-modelClass: Tempestronics\Mobile\Models\Install
+modelClass: Mohsin\Mobile\Models\Install
 
 # Default redirect location
-defaultRedirect: tempestronics/mobile/installs
+defaultRedirect: mohsin/mobile/installs

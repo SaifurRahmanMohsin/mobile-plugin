@@ -3,16 +3,16 @@
 # ===================================
 
 # Model List Column configuration
-list: $/tempestronics/mobile/models/app/columns.yaml
+list: $/mohsin/mobile/models/app/columns.yaml
 
 # Model Class name
-modelClass: Tempestronics\Mobile\Models\App
+modelClass: Mohsin\Mobile\Models\App
 
 # List Title
 title: Manage Apps
 
 # Link URL for each record
-recordUrl: tempestronics/mobile/apps/update/:id
+recordUrl: mohsin/mobile/apps/update/:id
 
 # Message to display if the list is empty
 noRecordsMessage: backend::lang.list.no_records

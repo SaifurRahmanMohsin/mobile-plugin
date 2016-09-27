@@ -5,8 +5,8 @@
 variants:
     label: Variant
     manage:
-        form: $/tempestronics/mobile/models/variant/fields.yaml
-        list: $/tempestronics/mobile/models/variant/columns.yaml
+        form: $/mohsin/mobile/models/variant/fields.yaml
+        list: $/mohsin/mobile/models/variant/columns.yaml
     view:
-        list: $/tempestronics/mobile/models/variant/columns.yaml
+        list: $/mohsin/mobile/models/variant/columns.yaml
         toolbarButtons: create|delete

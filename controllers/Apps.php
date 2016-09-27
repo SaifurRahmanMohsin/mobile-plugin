@@ -1,4 +1,4 @@
-<?php namespace Tempestronics\Mobile\Controllers;
+<?php namespace Mohsin\Mobile\Controllers;
 
 use Event;
 use BackendMenu;
@@ -24,6 +24,6 @@ class Apps extends Controller
     {
         parent::__construct();
         BackendMenu::setContext('October.System', 'system', 'mobile');
-        SettingsManager::setContext('Tempestronics.Mobile', 'apps');
+        SettingsManager::setContext('Mohsin.Mobile', 'apps');
     }
 }

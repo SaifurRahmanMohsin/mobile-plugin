@@ -6,25 +6,25 @@
 name: App
 
 # Model Form Field configuration
-form: $/tempestronics/mobile/models/app/fields.yaml
+form: $/mohsin/mobile/models/app/fields.yaml
 
 # Model Class name
-modelClass: Tempestronics\Mobile\Models\App
+modelClass: Mohsin\Mobile\Models\App
 
 # Default redirect location
-defaultRedirect: tempestronics/mobile/apps
+defaultRedirect: mohsin/mobile/apps
 
 # Create page
 create:
     title: Create App
-    redirect: tempestronics/mobile/apps/update/:id
-    redirectClose: tempestronics/mobile/apps
+    redirect: mohsin/mobile/apps/update/:id
+    redirectClose: mohsin/mobile/apps
 
 # Update page
 update:
     title: Edit App
-    redirect: tempestronics/mobile/apps
-    redirectClose: tempestronics/mobile/apps
+    redirect: mohsin/mobile/apps
+    redirectClose: mohsin/mobile/apps
 
 # Preview page
 preview:

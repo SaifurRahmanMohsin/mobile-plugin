@@ -6,16 +6,16 @@
 title: Manage Installs
 
 # Model List Column configuration
-list: $/tempestronics/mobile/models/install/columns.yaml
+list: $/mohsin/mobile/models/install/columns.yaml
 
 # Model Class name
-modelClass: Tempestronics\Mobile\Models\Install
+modelClass: Mohsin\Mobile\Models\Install
 
 # Link URL for each record
-recordUrl: tempestronics/mobile/installs/preview/:id
+recordUrl: mohsin/mobile/installs/preview/:id
 
 # Link URL for each record
-# recordUrl: tempestronics/mobile/installs/update/:id
+# recordUrl: mohsin/mobile/installs/update/:id
 
 # Message to display if the list is empty
 noRecordsMessage: backend::lang.list.no_records

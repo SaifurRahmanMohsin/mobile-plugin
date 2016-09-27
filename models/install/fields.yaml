@@ -6,4 +6,4 @@ fields:
     scoreboard:
       type: partial
       stretch: true
-      path: $/tempestronics/mobile/controllers/installs/_preview_scoreboard.htm
+      path: $/mohsin/mobile/controllers/installs/_preview_scoreboard.htm

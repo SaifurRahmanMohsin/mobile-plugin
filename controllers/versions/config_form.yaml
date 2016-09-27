@@ -6,25 +6,25 @@
 name: Version
 
 # Model Form Field configuration
-form: $/tempestronics/mobile/models/version/fields.yaml
+form: $/mohsin/mobile/models/version/fields.yaml
 
 # Model Class name
-modelClass: Tempestronics\Mobile\Models\Version
+modelClass: Mohsin\Mobile\Models\Version
 
 # Default redirect location
-defaultRedirect: tempestronics/mobile/versions
+defaultRedirect: mohsin/mobile/versions
 
 # Create page
 create:
     title: Create Version
-    redirect: tempestronics/mobile/versions/update/:id
-    redirectClose: tempestronics/mobile/versions
+    redirect: mohsin/mobile/versions/update/:id
+    redirectClose: mohsin/mobile/versions
 
 # Update page
 update:
     title: Edit Version
-    redirect: tempestronics/mobile/versions
-    redirectClose: tempestronics/mobile/versions
+    redirect: mohsin/mobile/versions
+    redirectClose: mohsin/mobile/versions
 
 # Preview page
 preview:

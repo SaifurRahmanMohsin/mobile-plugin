@@ -1,4 +1,4 @@
-<?php namespace Tempestronics\Mobile\Models;
+<?php namespace Mohsin\Mobile\Models;
 
 use Model;
 
@@ -11,7 +11,7 @@ class App extends Model
     /**
      * @var string The database table used by the model.
      */
-    public $table = 'tempestronics_mobile_apps';
+    public $table = 'mohsin_mobile_apps';
 
     /**
      * @var array Guarded fields
@@ -22,7 +22,7 @@ class App extends Model
      * @var array Relations
      */
     public $hasMany = [
-        'variants' => ['Tempestronics\Mobile\Models\Variant'],
+        'variants' => ['Mohsin\Mobile\Models\Variant'],
     ];
 
 }

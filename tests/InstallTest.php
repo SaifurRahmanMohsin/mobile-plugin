@@ -1,10 +1,10 @@
-<?php namespace Tempestronics\Mobile\Tests;
+<?php namespace Mohsin\Mobile\Tests;
 
 use App;
-use Tempestronics\Mobile\Models\App as AppModel;
-use Tempestronics\Mobile\Models\Install;
-use Tempestronics\Mobile\Http\Installs;
-use Tempestronics\Mobile\Models\Variant;
+use Mohsin\Mobile\Models\App as AppModel;
+use Mohsin\Mobile\Models\Install;
+use Mohsin\Mobile\Http\Installs;
+use Mohsin\Mobile\Models\Variant;
 use PluginTestCase;
 use System\Classes\PluginManager;
 use Felixkiss\UniqueWithValidator\ValidatorExtension;

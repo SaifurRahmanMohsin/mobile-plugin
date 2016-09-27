@@ -17,7 +17,6 @@
         'model' => 'Model',
         'installed_on' => 'Installed On',
         'last_opened_on' => 'Last Opened On',
-        'invalid_package' => 'Invalid package name',
         'return_to_installs' => 'Back to installs list',
     ],
     'platform' => [

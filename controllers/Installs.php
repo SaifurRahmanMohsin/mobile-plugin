@@ -1,9 +1,9 @@
-<?php namespace Tempestronics\Mobile\Controllers;
+<?php namespace Mohsin\Mobile\Controllers;
 
 use Cookie;
 use BackendMenu;
 use Backend\Classes\Controller;
-use Tempestronics\Mobile\Models\Variant;
+use Mohsin\Mobile\Models\Variant;
 
 /**
  * Installs Back-end Controller
@@ -23,7 +23,7 @@ class Installs extends Controller
     public function __construct()
     {
         parent::__construct();
-        BackendMenu::setContext('Tempestronics.Mobile', 'mobile', 'installs');
+        BackendMenu::setContext('Mohsin.Mobile', 'mobile', 'installs');
         $this->vars['variants'] = Variant::lists('description','id');
         $this -> variant_id = Cookie::get('variant_id', 1);
         $this->vars['variant_id'] = $this -> variant_id;

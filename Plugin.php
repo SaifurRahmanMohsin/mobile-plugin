@@ -1,4 +1,4 @@
-<?php namespace Tempestronics\Mobile;
+<?php namespace Mohsin\Mobile;
 
 use App;
 use Backend;
@@ -23,9 +23,9 @@ class Plugin extends PluginBase
     public function pluginDetails()
     {
         return [
-            'name'        => 'tempestronics.mobile::lang.plugin.name',
-            'description' => 'tempestronics.mobile::lang.plugin.description',
-            'author'      => 'Tempestronics',
+            'name'        => 'mohsin.mobile::lang.plugin.name',
+            'description' => 'mohsin.mobile::lang.plugin.description',
+            'author'      => 'Mohsin',
             'icon'        => 'icon-mobile'
         ];
     }
@@ -55,11 +55,11 @@ class Plugin extends PluginBase
     public function registerPermissions()
     {
         return [
-            'tempestronics.mobile.view_installs' => [
-                'tab' => 'tempestronics.mobile::lang.plugin.name',
-                'label' => 'tempestronics.mobile::lang.install.view_installs'
+            'mohsin.mobile.view_installs' => [
+                'tab' => 'mohsin.mobile::lang.plugin.name',
+                'label' => 'mohsin.mobile::lang.install.view_installs'
             ],
-            'tempestronics.mobile.manage_apps' => [
+            'mohsin.mobile.manage_apps' => [
                 'tab' => 'Mobile',
                 'label' => 'Manage apps'
             ],
@@ -79,20 +79,20 @@ class Plugin extends PluginBase
                 'description' => 'Manage the apps and their variants.',
                 'category'    => 'Mobile',
                 'icon'        => 'icon-mobile',
-                'url'         => Backend::url('tempestronics/mobile/apps'),
+                'url'         => Backend::url('mohsin/mobile/apps'),
                 'order'       => 500,
                 'keywords'    => 'apps builds variants',
-                'permissions' => ['tempestronics.mobile.manage_apps']
+                'permissions' => ['mohsin.mobile.manage_apps']
             ],
             'platforms' => [
                 'label'       => 'Platforms',
                 'description' => 'Manage the available platforms.',
                 'category'    => 'Mobile',
                 'icon'        => 'icon-th-large',
-                'url'         => Backend::url('tempestronics/mobile/platforms'),
+                'url'         => Backend::url('mohsin/mobile/platforms'),
                 'order'       => 501,
                 'keywords'    => 'apps builds variants',
-                'permissions' => ['tempestronics.mobile.manage_apps']
+                'permissions' => ['mohsin.mobile.manage_apps']
             ],
         ];
     }
@@ -106,19 +106,19 @@ class Plugin extends PluginBase
     {
         return [
             'mobile' => [
-                'label'       => 'tempestronics.mobile::lang.plugin.name',
-                'url'         => Backend::url('tempestronics/mobile/installs'),
+                'label'       => 'mohsin.mobile::lang.plugin.name',
+                'url'         => Backend::url('mohsin/mobile/installs'),
                 'icon'        => 'icon-mobile',
-                'permissions' => ['tempestronics.mobile.*'],
+                'permissions' => ['mohsin.mobile.*'],
                 'order'       => 500,
 
                 'sideMenu' => [
                     'installs' => [
-                        'label'       => 'tempestronics.mobile::lang.plugin.name',
+                        'label'       => 'mohsin.mobile::lang.plugin.name',
                         'icon'        => 'icon-download',
-                        'url'         => Backend::url('tempestronics/mobile/installs'),
+                        'url'         => Backend::url('mohsin/mobile/installs'),
                         'order'       => 100,
-                        'permissions' => ['tempestronics.mobile.view_installs']
+                        'permissions' => ['mohsin.mobile.view_installs']
                     ]
                 ]
             ],

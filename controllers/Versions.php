@@ -1,4 +1,4 @@
-<?php namespace Tempestronics\Mobile\Controllers;
+<?php namespace Mohsin\Mobile\Controllers;
 
 use BackendMenu;
 use Backend\Classes\Controller;
@@ -19,6 +19,6 @@ class Versions extends Controller
     public function __construct()
     {
         parent::__construct();
-        BackendMenu::setContext('Tempestronics.Mobile', 'mobile', 'versions');
+        BackendMenu::setContext('Mohsin.Mobile', 'mobile', 'versions');
     }
 }

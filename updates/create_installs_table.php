@@ -1,4 +1,4 @@
-<?php namespace Tempestronics\Mobile\Updates;
+<?php namespace Mohsin\Mobile\Updates;
 
 use Schema;
 use October\Rain\Database\Updates\Migration;
@@ -8,7 +8,7 @@ class CreateInstallsTable extends Migration
 
     public function up()
     {
-        Schema::create('tempestronics_mobile_installs', function($table)
+        Schema::create('mohsin_mobile_installs', function($table)
         {
             $table->engine = 'InnoDB';
             $table->increments('id');
@@ -22,7 +22,7 @@ class CreateInstallsTable extends Migration
 
     public function down()
     {
-        Schema::dropIfExists('tempestronics_mobile_installs');
+        Schema::dropIfExists('mohsin_mobile_installs');
     }
 
 }

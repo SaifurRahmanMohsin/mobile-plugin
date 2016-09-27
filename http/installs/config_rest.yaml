@@ -7,4 +7,4 @@ allowedActions:
   - store
 
 # Model Class name
-modelClass: Tempestronics\Mobile\Models\Install
+modelClass: Mohsin\Mobile\Models\Install
