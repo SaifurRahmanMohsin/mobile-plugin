@@ -8,3 +8,4 @@
     - create_platforms_table.php
     - Create Installs Table
     - create_installs_table.php
+1.0.3: Added app installs overview widget
