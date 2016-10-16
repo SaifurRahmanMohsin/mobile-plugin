@@ -3,6 +3,7 @@
 use App;
 use Backend;
 use System\Classes\PluginBase;
+use Mohsin\Mobile\Models\App as AppModel;
 use Felixkiss\UniqueWithValidator\ValidatorExtension;
 
 /**
@@ -123,6 +124,18 @@ class Plugin extends PluginBase
                 ]
             ],
         ];
+    }
+
+    public function registerReportWidgets()
+    {
+        if(AppModel::count() > 0) {
+          return [
+              'Mohsin\Mobile\ReportWidgets\InstallsOverview'=>[
+                  'label'   => 'App Installs Overview',
+                  'context' => 'dashboard'
+              ]
+          ];
+        } else return [];
     }
 
 }

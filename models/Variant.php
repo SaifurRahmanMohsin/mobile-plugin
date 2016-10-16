@@ -7,7 +7,6 @@ use Model;
  */
 class Variant extends Model
 {
-
     use \October\Rain\Database\Traits\Validation;
 
     /**
