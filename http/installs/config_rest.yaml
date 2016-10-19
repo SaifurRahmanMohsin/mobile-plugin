@@ -4,7 +4,7 @@
 
 # Allowed Rest Actions
 allowedActions:
-  - store
+  store:
 
 # Model Class name
 modelClass: Mohsin\Mobile\Models\Install

@@ -1,6 +1,7 @@
 <?php namespace Mohsin\Mobile;
 
 use App;
+use Event;
 use Backend;
 use System\Classes\PluginBase;
 use Mohsin\Mobile\Models\App as AppModel;

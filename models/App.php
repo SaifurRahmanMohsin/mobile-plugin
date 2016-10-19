@@ -7,6 +7,13 @@ use Model;
  */
 class App extends Model
 {
+    use \October\Rain\Database\Traits\Validation;
+
+    public $rules = [
+        'name' => 'required',
+        'description' => 'required',
+        'maintenance_message' => 'required'
+    ];
 
     /**
      * @var string The database table used by the model.

@@ -9,3 +9,7 @@
     - Create Installs Table
     - create_installs_table.php
 1.0.3: Added app installs overview widget
+1.0.4:
+    - Apps can now enable maintenance mode.
+    - apps_add_maintenance_message.php
+    - variants_add_is_maintenance.php

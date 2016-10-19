@@ -17,3 +17,8 @@ fields:
     platform:
         label: Platform
         type: relation
+
+    is_maintenance:
+        label: cms::lang.maintenance.is_enabled
+        comment: mohsin.mobile::lang.variant.is_maintenance_comment
+        type: checkbox
