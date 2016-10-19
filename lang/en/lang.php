@@ -20,6 +20,7 @@
         'return_to_installs' => 'Back to installs list',
     ],
     'variant' => [
+        'is_maintenance' => 'In Maintenance?',
         'is_maintenance_comment' => 'When enabled, users running this variant will recieve the maintenance mode message.'
     ],
     'app' => [

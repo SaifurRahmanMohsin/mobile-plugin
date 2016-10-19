@@ -7,12 +7,17 @@ columns:
         label: Package
         searchable: true
 
+    description:
+        label: Description
+        searchable: true
+
     platform:
         label: Platform
         searchable: true
         relation: platform
         select: name
 
-    description:
-        label: Description
-        searchable: true
+    is_maintenance:
+        label: mohsin.mobile::lang.variant.is_maintenance
+        comment: mohsin.mobile::lang.variant.is_maintenance_comment
+        type: switch
