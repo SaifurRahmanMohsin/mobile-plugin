@@ -64,9 +64,9 @@ class Installs extends Controller
         }
       else {
           // See if this is due to conflict, if so update the last_login time and return success
-          if(($existingInstall = Install::where('instance_id','=',$instance_id)->where('variant_id','=',$variant_id)) != null)
+          if(($existingInstall = Install::where('instance_id','=',$instance_id)->where('variant_id','=',$variant_id)->first()) != null)
             {
-                $existingInstall -> first() -> touchLastSeen();
+                $existingInstall -> touchLastSeen();
                 return response()->json('existing-install', 200);
             }
 

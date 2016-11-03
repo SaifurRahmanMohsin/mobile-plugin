@@ -1,5 +1,5 @@
-# [RESTful-Plugin](https://github.com/SaifurRahmanMohsin/Restful-Plugin) #
-Restful plugin for October CMS
+# [Mobile-Plugin](https://bitbucket.org/timetraveller1992/mobile-plugin) #
+Mobile plugin for October CMS
 
 ## Introduction ##
 
