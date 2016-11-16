@@ -1,6 +1,7 @@
 <?php namespace Mohsin\Mobile\Http;
 
 use Event;
+use Validator;
 use ApplicationException;
 use Backend\Classes\Controller;
 use Mohsin\Mobile\Models\Install;
@@ -33,18 +34,28 @@ class Installs extends Controller
             return $beforeSaveResponse;
         }
 
-      if(($variant = Variant::where('package', '=', $package) -> first()) == null)
-        return response()->json('invalid-package', 400);
+      /*
+      * Validate input
+      */
+      $data = post();
+      $rules = [];
+
+      $rules['instance_id'] = 'required|max:16|string';
+      $rules['package'] = 'required|regex:/^[a-z0-9]*(\.[a-z0-9]+)+[0-9a-z]$/|exists:mohsin_mobile_variants,package';
+
+      $validation = Validator::make($data, $rules);
+      if ($validation->fails()) {
+          return response()->json($validation->messages()->first(), 400);
+      }
 
       // Maintenance mode logic
+      $variant = Variant::where('package', '=', $package) -> first();
       if($variant->is_maintenance)
         return response()->json($variant->app->maintenance_message, 503);
 
-      $variant_id = $variant -> id;
-
       $install = new Install;
       $install -> instance_id = $instance_id;
-      $install -> variant_id = $variant_id;
+      $install -> variant_id = $variant -> id;
       $install -> last_seen = $install -> freshTimestamp();
 
       if($install -> save()) {
@@ -64,7 +75,7 @@ class Installs extends Controller
         }
       else {
           // See if this is due to conflict, if so update the last_login time and return success
-          if(($existingInstall = Install::where('instance_id','=',$instance_id)->where('variant_id','=',$variant_id)->first()) != null)
+          if(($existingInstall = Install::where('instance_id','=',$instance_id)->where('variant_id','=',$variant->id)->first()) != null)
             {
                 $existingInstall -> touchLastSeen();
                 return response()->json('existing-install', 200);

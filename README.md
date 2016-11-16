@@ -1,4 +1,4 @@
-# [Mobile-Plugin](https://bitbucket.org/timetraveller1992/mobile-plugin) #
+# [RESTful-Plugin](https://github.com/SaifurRahmanMohsin/Restful-Plugin) #
 Mobile plugin for October CMS
 
 ## Introduction ##
@@ -29,11 +29,9 @@ Once you have created the plugin entry in the backend, you can do the client sid
 
 #### POST /installs ####
 
-###### Resource URL ######
-<your-website-url>/api/v1/installs
+**Resource URL:** [/api/v1/installs](/api/v1/installs) [![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/1f9efcfa94c93810e739)
 
-###### Parameters ######
- |
+| Parameters | Description
 ------------- | -------------
 instance_id  | A unique ID, such as device ID or an ID generated using Google’s Instance ID API. Eg. 573b61d82b4e46e3
 package  | The package name of the application. Must match the name specified in the variants. Eg. com.acme.myapp

@@ -13,3 +13,4 @@
     - Apps can now enable maintenance mode.
     - apps_add_maintenance_message.php
     - variants_add_is_maintenance.php
+1.0.5: Added better validation rules
