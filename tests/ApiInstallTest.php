@@ -4,7 +4,6 @@ require_once "../../../tests/PluginTestCase.php";
 
 use App;
 use PluginTestCase;
-use Mohsin\Mobile\Plugin as MobilePlugin;
 use Mohsin\Mobile\Models\App as AppModel;
 use Mohsin\Mobile\Models\Platform;
 use Mohsin\Mobile\Models\Install;
@@ -13,7 +12,7 @@ use Mohsin\Mobile\Models\Variant;
 use System\Classes\PluginManager;
 use Felixkiss\UniqueWithValidator\ValidatorExtension;
 
-class InstallTest extends PluginTestCase
+class ApiInstallTest extends PluginTestCase
 {
     protected $baseUrl = 'http://acme.dev';
 
@@ -40,35 +39,29 @@ class InstallTest extends PluginTestCase
         $app -> variants() -> save($variant);
     }
 
-    public function testSetup()
+    public function testInstallApiForNewInstall()
     {
-        $this->seeInDatabase('mohsin_mobile_apps', [
-          'name' => 'Sample App',
-          'description' => 'This is a sample app.',
-          'maintenance_message' => 'Sorry, our servers are under maintenance. Please try again in a couple hours.'
-        ]);
+      $data = [
+        'instance_id' => '573b61d82b4e46e7',
+        'package' => 'com.acme.test'
+      ];
 
-        $this->seeInDatabase('mohsin_mobile_variants', [
-          'app_id' => 1,
-          'package' => 'com.acme.test',
-          'platform_id' => 1,
-          'description' => 'Sample Prod'
-        ]);
-    }
+      $response = $this -> json('POST', 'api/v1/installs', [
+          'instance_id' => array_get($data, 'instance_id'),
+          'package' => array_get($data, 'package'),
+      ]);
 
-    public function testInstall()
-    {
-        $variant = Variant::where('package', '=', 'com.acme.test') -> first();
+      // Verify if response is correct
+      $this->assertResponseOk();
+      $this->receiveJson();
+      $this->seeJson(['new-install']);
 
-        $install = new Install;
-        $install -> instance_id = '573b61d82b4e46e7';
-        $install -> variant_id = $variant -> id;
-        $install -> last_seen = $install -> freshTimestamp();
-        $install -> save(); // Shouldn't be a force save
+      // Verify if data has been added to database
+      $variant = Variant::where('package', '=', array_get($data, 'package')) -> first();
+      $this->seeInDatabase('mohsin_mobile_installs', [
+        'instance_id' => array_get($data, 'instance_id'),
+        'variant_id' => $variant -> id
+      ]);
 
-        $this->seeInDatabase('mohsin_mobile_installs', [
-          'instance_id' => '573b61d82b4e46e7',
-          'variant_id' => $variant -> id
-        ]);
     }
 }

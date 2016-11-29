@@ -14,3 +14,4 @@
     - apps_add_maintenance_message.php
     - variants_add_is_maintenance.php
 1.0.5: Added better validation rules
+1.0.6: Added plugin test cases

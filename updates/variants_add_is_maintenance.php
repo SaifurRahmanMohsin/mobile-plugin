@@ -8,18 +8,25 @@ class VariantsAddIsMaintenance extends Migration
 
     public function up()
     {
+        if (Schema::hasColumn('mohsin_mobile_variants', 'is_maintenance')) {
+            return;
+        }
+
         Schema::table('mohsin_mobile_variants', function($table)
         {
-            $table->boolean('is_maintenance');
+            $table->boolean('is_maintenance')->default(false);
         });
     }
 
     public function down()
     {
-        Schema::table('mohsin_mobile_variants', function($table)
+        if (Schema::hasColumn('mohsin_mobile_variants', 'is_maintenance'))
         {
-            $table->dropColumn('is_maintenance');
-        });
+          Schema::table('mohsin_mobile_variants', function($table)
+          {
+              $table->dropColumn('is_maintenance');
+          });
+        }
     }
 
 }

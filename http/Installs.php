@@ -1,6 +1,7 @@
 <?php namespace Mohsin\Mobile\Http;
 
 use Event;
+use Input;
 use Validator;
 use ApplicationException;
 use Backend\Classes\Controller;
@@ -20,8 +21,10 @@ class Installs extends Controller
 
     public function store()
     {
-      $instance_id = post('instance_id');
-      $package = post('package');
+      $data = Input::all();
+
+      $instance_id = array_get($data, 'instance_id');
+      $package = array_get($data, 'package');
 
       // Extensibility - Fire beforeSave Event
       $beforeSaveResponses = Event::fire('mohsin.mobile.beforeSave', [$instance_id, $package]);
@@ -37,7 +40,6 @@ class Installs extends Controller
       /*
       * Validate input
       */
-      $data = post();
       $rules = [];
 
       $rules['instance_id'] = 'required|max:16|string';
