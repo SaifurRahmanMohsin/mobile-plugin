@@ -15,3 +15,4 @@
     - variants_add_is_maintenance.php
 1.0.5: Added better validation rules
 1.0.6: Added plugin test cases
+1.0.7: Optimized Installs list using Dropdown widget.

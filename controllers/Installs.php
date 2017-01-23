@@ -1,9 +1,9 @@
 <?php namespace Mohsin\Mobile\Controllers;
 
-use Cookie;
 use BackendMenu;
 use Backend\Classes\Controller;
 use Mohsin\Mobile\Models\Variant;
+use Mohsin\Mobile\Widgets\Dropdown;
 
 /**
  * Installs Back-end Controller
@@ -18,25 +18,22 @@ class Installs extends Controller
     public $formConfig = 'config_form.yaml';
     public $listConfig = 'config_list.yaml';
 
-    protected $variant_id;
+    protected $dropdownWidget;
 
     public function __construct()
     {
         parent::__construct();
         BackendMenu::setContext('Mohsin.Mobile', 'mobile', 'installs');
-        $this->vars['variants'] = Variant::lists('description','id');
-        $this -> variant_id = Cookie::get('variant_id', 1);
-        $this->vars['variant_id'] = $this -> variant_id;
+
+        $this->dropdownWidget = new Dropdown($this);
+        $this->dropdownWidget->alias = 'variantsDropdown';
+        $this->dropdownWidget->setListItems(Variant::lists('description','id'));
+        $this->dropdownWidget->setErrorMessage('App list empty. First add apps from the settings.');
+        $this->dropdownWidget->bindToController();
     }
 
     public function listExtendQuery($query)
     {
-        $query->withVariant($this -> variant_id);
-    }
-
-    public function onVariantChange()
-    {
-        $value = post('value');
-        Cookie::queue('variant_id', $value, 120);
+        $query->withVariant($this->dropdownWidget->getActiveIndex());
     }
 }
