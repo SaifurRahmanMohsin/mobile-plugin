@@ -17,5 +17,6 @@ for hook in $HOOK_NAMES; do
         chmod +x $HOOKS_DIR/$hook
   	fi
 done
+composer up
 
 echo "Directory renamed. cd to $TARGET_DIR before working on it. And exit any other programs in the previous cd."
