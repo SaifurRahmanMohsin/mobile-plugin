@@ -34,29 +34,29 @@ class Platform extends Model
      */
     protected $fillable = ['name'];
 
-     /**
-      * @var array Relations
-      */
-     public $hasMany = [
-         'variants' => ['Mohsin\Mobile\Models\Variant', 'delete' => 'true']
-     ];
+    /**
+    * @var array Relations
+    */
+    public $hasMany = [
+       'variants' => ['Mohsin\Mobile\Models\Variant', 'delete' => 'true']
+    ];
 
     /**
-     * @var array Reserved platform names.
-     */
-     protected static $reserved = [
-       // 'android' => 'Mohsin.Android'
-     ];
+    * @var array Reserved platform names.
+    */
+    protected static $reserved = [
+        'android', 'iOS'
+    ];
 
     public static function isReserved($str)
     {
-      return array_key_exists($str, self::$reserved);
+        return array_key_exists($str, self::$reserved);
     }
 
-   public static function getReservedPluginName($slug)
-   {
-      if(array_key_exists($slug, self::$reserved))
-        return self::$reserved[$slug];
-   }
-
+    public static function getReservedPluginName($slug)
+    {
+        if (array_key_exists($slug, self::$reserved)) {
+            return self::$reserved[$slug];
+        }
+    }
 }

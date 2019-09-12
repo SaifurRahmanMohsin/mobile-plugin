@@ -5,11 +5,9 @@ use October\Rain\Database\Updates\Migration;
 
 class CreateInstallsTable extends Migration
 {
-
     public function up()
     {
-        Schema::create('mohsin_mobile_installs', function($table)
-        {
+        Schema::create('mohsin_mobile_installs', function ($table) {
             $table->engine = 'InnoDB';
             $table->increments('id');
             $table->string('instance_id', 16);
@@ -24,5 +22,4 @@ class CreateInstallsTable extends Migration
     {
         Schema::dropIfExists('mohsin_mobile_installs');
     }
-
 }

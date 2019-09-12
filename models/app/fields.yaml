@@ -15,6 +15,7 @@ fields:
     maintenance_message:
       label: mohsin.mobile::lang.app.maintenance_message_label
       commentAbove: mohsin.mobile::lang.app.maintenance_message_comment
+      context: update
       default: Sorry, our servers are under maintenance. Please try again in a couple hours.
 
     variants:

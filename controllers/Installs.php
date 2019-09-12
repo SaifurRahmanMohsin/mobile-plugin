@@ -27,7 +27,7 @@ class Installs extends Controller
 
         $this->dropdownWidget = new Dropdown($this);
         $this->dropdownWidget->alias = 'variantsDropdown';
-        $this->dropdownWidget->setListItems(Variant::lists('description','id'));
+        $this->dropdownWidget->setListItems(Variant::lists('description', 'id'));
         $this->dropdownWidget->setErrorMessage('App list empty. First add apps from the settings.');
         $this->dropdownWidget->bindToController();
     }

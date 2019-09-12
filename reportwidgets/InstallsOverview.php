@@ -66,21 +66,21 @@ class InstallsOverview extends ReportWidgetBase
     {
         $days = $this->property('days');
         $variant = $this->property('variant');
-        if (!$days)
+        if (!$days) {
             throw new ApplicationException('Invalid days value: '.$days);
+        }
 
         $installs = Install::select('created_at')
           ->orderBy('created_at', 'desc')
           ->where('created_at', '>=', Carbon::now()->subDays($days))
           ->where('variant_id', '=', $variant)
           ->get()
-          ->groupBy(function($date) {
+          ->groupBy(function ($date) {
               return Carbon::parse($date->created_at)->format('d M'); // grouping by years
           });
 
         $points = [];
-        foreach ($installs as $key => $value)
-        {
+        foreach ($installs as $key => $value) {
             $point = [
                 strtotime("+1 day", strtotime($key)) * 1000,
                 count($value)
@@ -90,5 +90,4 @@ class InstallsOverview extends ReportWidgetBase
 
         $this->vars['rows'] = str_replace('"', '', substr(substr(json_encode($points), 1), 0, -1));
     }
-
 }

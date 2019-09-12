@@ -34,8 +34,17 @@ class InstallTest extends PluginTestCase
 
         $platform = Platform::create(['name' => 'Acme']);
 
-        $app = AppModel::create(['name' => 'Sample App', 'description' => 'This is a sample app.', 'maintenance_message' => 'Sorry, our servers are under maintenance. Please try again in a couple hours.']);
-        $variant = Variant::create(['app_id' => $app -> id, 'package' => 'com.acme.test', 'platform_id' => $platform -> id, 'description' => 'Sample Prod']);
+        $app = AppModel::create([
+          'name' => 'Sample App',
+          'description' => 'This is a sample app.',
+          'maintenance_message' => 'Sorry, our servers are under maintenance. Please try again in a couple hours.'
+        ]);
+        $variant = Variant::create([
+          'app_id' => $app -> id,
+          'package' => 'com.acme.test',
+          'platform_id' => $platform -> id,
+          'description' => 'Sample Prod'
+        ]);
 
         $app -> variants() -> save($variant);
     }

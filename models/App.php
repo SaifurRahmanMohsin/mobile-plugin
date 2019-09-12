@@ -11,8 +11,7 @@ class App extends Model
 
     public $rules = [
         'name' => 'required',
-        'description' => 'required',
-        'maintenance_message' => 'required'
+        'description' => 'required'
     ];
 
     /**

@@ -40,8 +40,7 @@ class Plugin extends PluginBase
         // Register ServiceProviders
         App::register('\Felixkiss\UniqueWithValidator\UniqueWithValidatorServiceProvider');
         // Registering the validator extension with the validator factory
-        $this->app['validator']->resolver(function($translator, $data, $rules, $messages)
-        {
+        $this->app['validator']->resolver(function ($translator, $data, $rules, $messages) {
             // Set custom validation error messages
             $messages['unique_with'] = $translator->get('uniquewith-validator::validation.unique_with');
 
@@ -85,17 +84,7 @@ class Plugin extends PluginBase
                 'order'       => 500,
                 'keywords'    => 'apps builds variants',
                 'permissions' => ['mohsin.mobile.manage_apps']
-            ],
-            'platforms' => [
-                'label'       => 'Platforms',
-                'description' => 'Manage the available platforms.',
-                'category'    => 'Mobile',
-                'icon'        => 'icon-th-large',
-                'url'         => Backend::url('mohsin/mobile/platforms'),
-                'order'       => 501,
-                'keywords'    => 'apps builds variants',
-                'permissions' => ['mohsin.mobile.manage_apps']
-            ],
+            ]
         ];
     }
 
@@ -129,14 +118,15 @@ class Plugin extends PluginBase
 
     public function registerReportWidgets()
     {
-        if(AppModel::count() > 0) {
-          return [
-              'Mohsin\Mobile\ReportWidgets\InstallsOverview'=>[
+        if (AppModel::count() > 0) {
+            return [
+              'Mohsin\Mobile\ReportWidgets\InstallsOverview' => [
                   'label'   => 'App Installs Overview',
                   'context' => 'dashboard'
               ]
-          ];
-        } else return [];
+            ];
+        } else {
+            return [];
+        }
     }
-
 }

@@ -11,5 +11,13 @@
     ],
     "require": {
         "felixkiss/uniquewith-validator": "2.*"
+    },
+    "replace": {
+        "illuminate/contracts": "*",
+        "illuminate/support": "*",
+        "illuminate/filesystem": "*",
+        "illuminate/translation": "*",
+        "illuminate/container": "*",
+        "illuminate/validation": "*"
     }
 }

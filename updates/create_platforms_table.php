@@ -5,11 +5,9 @@ use October\Rain\Database\Updates\Migration;
 
 class CreatePlatformsTable extends Migration
 {
-
     public function up()
     {
-        Schema::create('mohsin_mobile_platforms', function($table)
-        {
+        Schema::create('mohsin_mobile_platforms', function ($table) {
             $table->engine = 'InnoDB';
             $table->increments('id');
             $table->string('name');
@@ -21,5 +19,4 @@ class CreatePlatformsTable extends Migration
     {
         Schema::dropIfExists('mohsin_mobile_platforms');
     }
-
 }
