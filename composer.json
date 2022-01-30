@@ -1,6 +1,7 @@
 {
-    "name": "mohsin/mobile",
-    "description": "Mobile.",
+    "name": "mohsin/mobile-plugin",
+    "type": "october-plugin",
+    "description": "Mobile plugin for OctoberCMS.",
     "homepage": "https://mohsin.com",
     "keywords": ["mobile", "apps"],
     "authors": [
